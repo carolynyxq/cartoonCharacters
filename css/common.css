@@ -1,0 +1,78 @@
+.ui-page {
+  background: #fff;
+}
+.ui-content {
+  padding: 0;
+}
+.time {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  color: #003f54;
+  text-shadow: none;
+  font-size: 14px;
+  padding: 3px;
+  cursor: pointer;
+  border: 1px solid #003f54;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.time span {
+  color: #b3b3b3;
+}
+.guide {
+  text-align: center;
+}
+.guide .guide-img {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+.guide .guide-img .i {
+  position: absolute;
+  width: 100%;
+}
+.guide .guide-img .i a img {
+  min-width: 350px;
+}
+.guide .guide-index {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  color: #003f54;
+}
+.guide .guide-index span {
+  background: #cccccc;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  text-align: center;
+  line-height: 18px;
+}
+.guide .guide-index .on {
+  background: orangered;
+  color: #fff;
+}
+@media screen and (min-width: 992px) {
+  .i a img {
+    width: 38%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .l {
+    margin-top: 15%;
+  }
+  .i a img {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .l {
+    margin-top: 40%;
+  }
+  .i a img {
+    width: 45%;
+  }
+}

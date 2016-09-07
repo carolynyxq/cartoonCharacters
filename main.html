@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+  <title>记事本</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
+  <link rel="stylesheet" href="css/common.css"/>
+</head>
+<body>
+<div id="noteP" data-role="page" data-theme="b">
+  <div data-role="header" data-position="fixed">
+    <h1>我的记事本</h1>
+    <a href="#addNodeP" class="ui-btn-right">新增</a>
+  </div>
+  <div data-role="content">
+    <ul data-role="listview"></ul>
+  </div>
+  <div data-role="footer"  data-position="fixed">
+    <h1>&copy;2016 MAKED BY CAROLYNYXQ</h1>
+  </div>
+</div>
+
+<div id="addNodeP" data-role="page" data-theme="b">
+  <div data-role="header" data-position="fixed">
+    <h1>新增笔记</h1>
+    <a href="#" data-rel="back" data-icon="back" data-iconpos="notext"></a>
+    <a href="#" class="ui-btn-right">保存</a>
+  </div>
+  <div data-role="content"></div>
+  <div data-role="footer"  data-position="fixed">
+    <h1>&copy;2016 MAKED BY CAROLYNYXQ</h1>
+  </div>
+</div>
+
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
