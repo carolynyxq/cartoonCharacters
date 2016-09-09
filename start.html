@@ -3,74 +3,35 @@
 <head lang="en">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
-  <title>卡通动漫人物简介</title>
+  <title>记事本</title>
   <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
   <link rel="stylesheet" href="css/common.css"/>
 </head>
 <body>
-  <!--start首页-->
-  <div id="start" data-role="page">
-    <div data-role="content">
-      <!--carousel-->
-      <div class="carousel">
-          <ul class="carousel-img">
-            <li><a href="#"><img src="img/ad1.jpg" /></a></li>
-            <li><a href="#"><img src="img/ad2.jpg" /></a></li>
-            <li><a href="#"><img src="img/ad3.jpg" /></a></li>
-            <li><a href="#"><img src="img/ad4.jpg" /></a></li>
-            <li><a href="#"><img src="img/ad5.jpg" /></a></li>
-          </ul>
-          <div class="carousel-index">
-            <span class="on"></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-      </div>
-      <!--position&&search-->
-      <div class="toplayer">
-        <form action="#">
-          <select>
-            <option value="select">--请选择--</option>
-            <option value="select">江苏南京</option>
-            <option value="select">江苏苏州</option>
-          </select>
-          <input type="search"/>
-        </form>
-      </div>
-    </div>
-    <div data-role="footer" data-position="fixed" data-theme="b" >
-      <div data-role="navbar" class="nav-style ui-navbar ui-mini">
-        <ul>
-          <li><a class="ui-btn-active ui-state-persist" data-icon="info" href="#">外卖</a></li>
-          <li><a data-icon="star" href="#">订单</a></li>
-          <li><a data-icon="search" href="12.html">发现</a></li>
-          <li><a data-icon="gear" href="#">我的</a></li>
-        </ul>
+<div id="startP" data-role="page" data-theme="b">
+  <div data-role="header" data-position="fixed">
+    <h1>新手导航</h1>
+    <a href="main.html" data-icon="arrow-r" data-iconpos="notext" rel="external" class="ui-btn-right">使用记事本</a>
+  </div>
+  <div data-role="content">
+    <div class="guide">
+      <ul class="guide-img">
+        <li class="i"><a href="#"><img src="img/tx11.jpg" /></a></li>
+        <li class="i"><a href="#"><img src="img/tx08.jpg" /></a></li>
+      </ul>
+      <div class="guide-index">
+        <span class="on">1</span>
+        <span>2</span>
       </div>
     </div>
   </div>
-  <script src="js/jquery-1.11.1.js"></script>
-  <script src="js/jquery.mobile-1.4.5.js"></script>
-  <script>
-   $(document).on("pagecreate","#start",function(){
-     $.event.special.swipe.horizontalDistanceThreshold = 5;
-     var count=$(".carousel-img").children().length;
-     $(".carousel-img li:not(:first-child)").hide();
-     $(".carousel-img").children().on("swipeleft",function(evt){
-       evt.preventDefault();
-       var i=$(this).index();
-       ++i>=count?i=0:i;
-       $(".carousel-img li").filter(":visible").fadeOut(1000).parent().children().eq(i).fadeIn(1000);
-     });
-     $(".carousel-img").children().on("swiperight",function(evt){
-       evt.preventDefault();
-       var i=$(this).index();
-       --i<0?i=4:i;
-       $(".carousel-img li").filter(":visible").fadeOut(1000).parent().children().eq(i).fadeIn(1000);
-     });
-    });
-  </script>
+  <div data-role="footer" data-position="fixed">
+    <h1>&copy;2016 MAKED BY CAROLYNYXQ</h1>
+  </div>
+</div>
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+<script src="js/base.js"></script>
+<script src="js/global.js"></script>
 </body>
 </html>

@@ -3,123 +3,27 @@
 <head lang="en">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
-  <title></title>
+  <title>记事本</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
+  <link rel="stylesheet" href="css/common.css"/>
 </head>
 <body>
-<div data-role="page">
-  <div data-role="header">
-    <div data-role="navbar">
-      <ul>
-        <li><a class="ui-btn-active ui-state-persist" data-icon="home" href="#">首页</a></li>
-        <li><a data-icon="grid" href="list.html">列表页</a></li>
-        <li><a data-icon="info" href="#">详情页</a></li>
-        <li><a data-icon="gear" href="#">个人中心</a></li>
-      </ul>
-    </div>
+<div id="noteP" data-role="page" data-theme="b">
+  <div data-role="header" data-position="fixed">
+    <h1>我的记事本</h1>
+    <a href="addNote.html" class="ui-btn-right">新增</a>
   </div>
-  <div data-role="content" style="background:lightblue;">
-      <ul class="ui-grid-c">
-        <li class="ui-block-a">
-          <a href="list.html"><img src="img/tx01.jpg" style="width:100%"/>
-          <h4 style="text-align: center;color:darkgreen;">卡通头像1</h4>
-          </a>
-        </li>
-        <li class="ui-block-b" style="margin:0 8px;">
-          <a href="#"><img src="img/tx02.jpg" style="width:100%"/>
-          <h4 style="text-align: center;color:darkgreen;">卡通头像2</h4>
-          </a>
-        </li>
-        <li class="ui-block-c">
-          <a href="#"><img src="img/tx03.jpg" style="width:100%"/>
-          <h4 style="text-align: center;color:darkgreen;">卡通头像3</h4>
-          </a>
-        </li>
-        <li class="ui-block-a">
-          <a href="#"><img src="img/tx04.jpg" style="width:100%"/>
-          <h4 style="text-align: center;color:darkgreen;">卡通头像1</h4>
-          </a>
-        </li>
-        <li class="ui-block-b" style="margin:0 8px;">
-          <a href="#"><img src="img/tx05.jpg" style="width:100%"/>
-          <h4 style="text-align: center;color:darkgreen;">卡通头像2</h4>
-          </a>
-        </li>
-        <li class="ui-block-c">
-          <a href="#"><img src="img/tx06.jpg" style="width:100%"/>
-          <h4 style="text-align: center;color:darkgreen;">卡通头像3</h4>
-          </a>
-        </li>
-        <li class="ui-block-a">
-          <a href="#"><img src="img/tx07.jpg" style="width:100%"/>
-          <h4 style="text-align: center;color:darkgreen;">卡通头像1</h4>
-          </a>
-        </li>
-        <li class="ui-block-b" style="margin:0 8px;">
-          <a href="#"><img src="img/tx08.jpg" style="width:100%"/>
-          <h4 style="text-align: center;color:darkgreen;">卡通头像2</h4>
-          </a>
-        </li>
-        <li class="ui-block-c">
-          <a href="#"><img src="img/tx09.jpg" style="width:100%"/>
-          <h4 style="text-align: center;color:darkgreen;">卡通头像3</h4>
-          </a>
-        </li>
-        <li class="ui-block-a">
-          <a href="#"><img src="img/tx10.jpg" style="width:100%"/>
-          <h4 style="text-align: center;color:darkgreen;">卡通头像1</h4>
-          </a>
-        </li>
-        <li class="ui-block-b" style="margin:0 8px;">
-          <a href="#"><img src="img/tx11.jpg" style="width:100%"/>
-          <h4 style="text-align: center;color:darkgreen;">卡通头像2</h4>
-          </a>
-        </li>
-        <li class="ui-block-c">
-          <a href="#">
-            <img src="img/tx12.jpg" style="width:100%"/>
-            <h4 style="text-align: center;color:darkgreen;">卡通头像3</h4>
-          </a>
-        </li>
-        <li class="ui-block-a">
-          <a href="#">
-            <img src="img/tx13.jpg" style="width:100%"/>
-            <h4 style="text-align: center;color:darkgreen;">卡通头像1</h4>
-          </a>
-        </li>
-        <li class="ui-block-b" style="margin:0 8px;">
-          <a href="#">
-            <img src="img/tx14.jpg" style="width:100%"/>
-            <h4 style="text-align: center;color:darkgreen;">卡通头像2</h4>
-          </a>
-        </li>
-        <li class="ui-block-c">
-          <a href="#">
-            <img src="img/tx15.jpg" style="width:100%"/>
-            <h4 style="text-align: center;color:darkgreen;">卡通头像3</h4>
-          </a>
-        </li>
-      </ul>
-   <!--
-    <li class="ui-block-a"><a href="#"><img src="img/tx07.jpg" style="width:100%"/></a></li>
-    <li class="ui-block-b"><a href="#"><img src="img/tx08.jpg" style="width:100%"/></a></li>
-    <li class="ui-block-c"><a href="#"><img src="img/tx09.jpg" style="width:100%"/></a></li>
-    <li class="ui-block-a"><a href="#"><img src="img/tx10.jpg" style="width:100%"/></a></li>
-    <li class="ui-block-b"><a href="#"><img src="img/tx11.jpg" style="width:100%"/></a></li>
-    <li class="ui-block-c"><a href="#"><img src="img/tx12.jpg" style="width:100%"/></a></li>
-    <li class="ui-block-a"><a href="#"><img src="img/tx13.jpg" style="width:100%"/></a></li>
-    <li class="ui-block-b"><a href="#"><img src="img/tx14.jpg" style="width:100%"/></a></li>
-    <li class="ui-block-c"><a href="#"><img src="img/tx15.jpg" style="width:100%"/></a></li>-->
+  <div data-role="content">
+    <ul id="allNotes" data-role="listview"></ul>
   </div>
-  <div data-role="footer" data-position="fixed" data-theme="b">
-    <div data-role="navbar" data-grid="c" class="nav-style ui-navbar ui-mini" role="navigation">
-      <ul>
-        <li><a data-icon="info" data-iconpos="notext" href="#"></a></li>
-        <li><a data-icon="star" data-iconpos="notext" href="#"></a></li>
-        <li><a data-icon="search" data-iconpos="notext" href="12.html"></a></li>
-        <li><a data-icon="check" data-iconpos="notext" href="#"></a></li>
-      </ul>
-    </div>
+  <div data-role="footer"  data-position="fixed">
+    <h1>&copy;2016 MAKED BY CAROLYNYXQ</h1>
   </div>
 </div>
+
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+<script src="js/base.js"></script>
+<script src="js/global.js"></script>
 </body>
 </html>
