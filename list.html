@@ -8,13 +8,14 @@
   <link rel="stylesheet" href="css/common.css"/>
 </head>
 <body>
-<div id="noteP" data-role="page" data-theme="b">
+<div id="listP" data-role="page" data-theme="b">
   <div data-role="header" data-position="fixed">
-    <h1>我的记事本</h1>
+    <h1>我的笔记</h1>
+    <a href="javascript:" class="ui-btn-left" data-rel="back" data-icon="back" data-iconpos="notext">新增</a>
     <a href="addNote.html" class="ui-btn-right">新增</a>
   </div>
   <div data-role="content">
-    <ul id="allNotes" data-role="listview"></ul>
+    <ul id="noteList" data-role="listview" data-filter="true"></ul>
   </div>
   <div data-role="footer"  data-position="fixed">
     <h1>&copy;2016 MAKED BY CAROLYNYXQ</h1>
