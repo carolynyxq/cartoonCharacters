@@ -10,17 +10,17 @@
 <body>
 <div id="editNoteP" data-role="page" data-theme="b">
   <div data-role="header" data-position="fixed">
-    <a href="list.html" data-ajax="false">返回笔记列表</a>
+    <a href="list.html" data-ajax="false" class="add">返回笔记列表</a>
     <h4>编辑记事</h4>
-    <a href="javascript:" class="ui-btn-right">更新笔记</a>
+    <a href="javascript:" class="ui-btn-right add">更新笔记</a>
   </div>
   <div data-role="content">
     <label for="rdo-type">类型：</label>
     <fieldset data-role="controlgroup" id="rdo-type" data-mini="true" data-type="horizontal" style="padding:5px 0 0 0;margin:0;">
       <input type="radio" name="rdo-type" id="rdo-type-0" value="a"/>
-      <label for="rdo-type-0" id="lbl-type-0">散文</label>
+      <label for="rdo-type-0" id="lbl-type-0">技术笔记</label>
       <input type="radio" name="rdo-type" id="rdo-type-1" value="b"/>
-      <label for="rdo-type-1" id="lbl-type-1">随笔</label>
+      <label for="rdo-type-1" id="lbl-type-1">生活笔记</label>
       <input type="hidden" id="hidtype" value="a"/>
     </fieldset>
     <label for="txt-title">标题：</label>

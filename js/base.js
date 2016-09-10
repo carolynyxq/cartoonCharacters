@@ -4,6 +4,6 @@ if(!window.localStorage){
   var user={};
   user.ls={
     setParam:function(k,v){window.localStorage.setItem(k,v);},
-    getParam:function(k,v){return window.localStorage.getItem(k,v);}
+    getParam:function(k){return window.localStorage.getItem(k);}
   };
 }
