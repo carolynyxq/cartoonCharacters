@@ -1,7 +1,7 @@
 //start.html
 $("#startP").on("pagecreate",function(){
   if(/*user.utils.getParam('user')==null*/true){
-    $.event.special.swipe.horizontalDistanceThreshold = 5;
+    $.event.special.swipe.horizontalDistanceThreshold = 3;
     var count=$(".guide-img").children().length;
     $(".guide-img li:not(:first-child)").hide();
     $(".guide-img").children().on("swipeleft",function(evt){
@@ -9,7 +9,7 @@ $("#startP").on("pagecreate",function(){
       var i=$(this).index();
       //++i>=count?i=0:i;
       if(++i>=count){
-        alert("当前已是最后一页！");
+        confirm("当前已是最后一页,是否进入记事薄！")?window.location.href="main.html":0;
         i=0;
       }else{
         $(".guide-img li").filter(":visible").fadeOut(1000).parent().children().eq(i).fadeIn(1000);
@@ -24,6 +24,18 @@ $("#startP").on("pagecreate",function(){
         alert("当前已是第一页！");
         i = 0;
       } else {
+        $(".guide-img li").filter(":visible").fadeOut(1000).parent().children().eq(i).fadeIn(1000);
+        $(".guide-index span").eq(i).toggleClass("on").siblings().removeClass("on");
+      }
+    });
+    $(".guide-img").children().on("tap",function(evt){
+      evt.preventDefault();
+      var i=$(this).index();
+      //++i>=count?i=0:i;
+      if(++i>=count){
+        confirm("当前已是最后一页,是否进入记事薄！")?window.location.href="main.html":0;
+        i=0;
+      }else{
         $(".guide-img li").filter(":visible").fadeOut(1000).parent().children().eq(i).fadeIn(1000);
         $(".guide-index span").eq(i).toggleClass("on").siblings().removeClass("on");
       }
@@ -49,8 +61,8 @@ $("#noteP").on("pagecreate",function(){
   //alert("count"+count+";a"+acount+";b"+bcount);
   var strHtml="";
   strHtml+='<li data-role="list-divider">我的所有笔记<span class="ui-li-count">'+count+'</span></li>';
-  strHtml+='<li><a href="list.html" class="ui-btn ui-btn-icon-right ui-icon-carat-r" data-ajax="false" data-id="a" data-name="散文">散文</a><span class="ui-li-count">'+acount+'</span></li>';
-  strHtml+='<li><a href="list.html" class="ui-btn ui-btn-icon-right ui-icon-carat-r" data-ajax="false" data-id="b" data-name="随笔">随笔</a><span class="ui-li-count">'+bcount+'</span></li>';
+  strHtml+='<li><a href="list.html" class="ui-btn ui-btn-icon-right ui-icon-carat-r" data-ajax="false" data-id="a" data-name="技术笔记">技术笔记</a><span class="ui-li-count">'+acount+'</span></li>';
+  strHtml+='<li><a href="list.html" class="ui-btn ui-btn-icon-right ui-icon-carat-r" data-ajax="false" data-id="b" data-name="生活笔记">生活笔记</a><span class="ui-li-count">'+bcount+'</span></li>';
   $("#allNotes").html(strHtml);
   $("#allNotes").delegate("li a","click",function(evt){
     user.ls.setParam('link_type',$(this).data('id'));
@@ -69,7 +81,7 @@ $("#listP").on('pagecreate',function(){
     if(key.substring(0,4)=='note'){
       var getData=JSON.parse(user.ls.getParam(key));
       if (getData.type==type){
-        strHtml+='<li data-icon="false" data-ajax="false"><a href="detail.html" class="ui-btn ui-btn-icon-right ui-icon-carat-r" data-id="'+getData.nid+'">'+getData.title+'</a></li>';
+        strHtml+='<li data-icon="false"><a href="detail.html" rel="external" data-ajax="false" class="ui-btn ui-btn-icon-right ui-icon-carat-r" data-id="'+getData.nid+'">'+getData.title+'</a></li>';
         sum++;
       }
     }
@@ -84,7 +96,7 @@ $("#listP").on('pagecreate',function(){
 $("#detailP").on("pagecreate",function(){
   var id=user.ls.getParam("list_link_id");
   var listData=JSON.parse(user.ls.getParam(id));
-  $("#noteT").html(listData.type="a"?"散文":"随笔");
+  $("#noteT").html(listData.type="a"?"技术笔记":"生活笔记");
   $("#title").html(listData.title);
   $("#content").html(listData.content);
   $(this).delegate("#del","click",function(evt){
@@ -96,7 +108,7 @@ $("#detailP").on("pagecreate",function(){
 });
 //editNote.html
 $("#editNoteP").on('pagecreate',function(){
-  var editNote=JSON.parse(user.ls.getParam('note_261'));
+  var editNote=JSON.parse(user.ls.getParam(user.ls.getParam('list_link_id')));
   //将从localStorage中获取到的笔记内容显示到页面上
   $("#hidtype").val(editNote.type);
   $("#txt-title").val(editNote.title);
@@ -146,7 +158,7 @@ $("#addNoteP").on('pagecreate',function(){
       user.ls.setParam(strnid,jsonnote);
       window.location.href="list.html";
     }else{
-      alert("笔记内容不能为空！");
+      confirm("笔记内容为空,未保存，确定返回！");
     }
   });
   function rndNum(n){
